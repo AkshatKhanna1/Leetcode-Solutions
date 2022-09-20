@@ -1,0 +1,9 @@
+class Solution:
+    def hammingDistance(self, x: int, y: int) -> int:
+        value=x^y
+        setBit=0
+        while value!=0:
+            value=value&(value-1)
+            setBit+=1
+        return setBit
+        

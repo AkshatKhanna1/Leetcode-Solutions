@@ -1,0 +1,25 @@
+class Solution:
+    def singleNumber(self, nums: List[int]) -> List[int]:
+        xorSum=0
+        for i in nums:
+            xorSum^=i
+        
+        rsb=1
+        num=xorSum
+        while True:
+            if num%2==1:
+                break
+            rsb*=2
+            num=num>>1
+        
+        num1=0
+        num2=0
+        
+        for i in nums:
+            if i&rsb==0:
+                num1^=i
+            else:
+                num2^=i
+        
+        return [num1^xorSum, num2^xorSum]
+                

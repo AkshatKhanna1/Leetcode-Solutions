@@ -1,0 +1,34 @@
+class Solution:
+    def sortByBits(self, arr: List[int]) -> List[int]:
+        dic={}
+        maxCount=0
+        
+        for i in arr:
+            count=self.bitsCount(i)
+            if count in dic:
+                dic[count].append(i)
+            else:
+                dic[count]=[i]
+            if count>maxCount:
+                maxCount=count
+        
+        i=0
+        
+        for itr in range(maxCount+1):
+            if itr in dic:
+                dic[itr].sort()
+                for v in dic[itr]:
+                    arr[i]=v
+                    i+=1
+    
+        return arr
+        
+        
+    def bitsCount(self, num):
+        count=0
+        while num>0:
+            num&=(num-1)
+            count+=1
+        return count
+            
+        

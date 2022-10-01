@@ -1,5 +1,6 @@
 #O(N) Time Complexity
 #O(1) Space Complexity
+
 class Solution:
     def findMaxAverage(self, nums: List[int], k: int) -> float:
         sum=0

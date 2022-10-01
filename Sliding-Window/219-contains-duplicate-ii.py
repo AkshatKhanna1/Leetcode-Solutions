@@ -1,5 +1,6 @@
 # O(N) Time Complexity
 # O(min(N,K)) Space Complexity
+
 class Solution:
     def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
         n=len(nums)

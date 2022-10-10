@@ -1,3 +1,6 @@
+# O(N) Time Complexity
+# O(1) Space Complexity
+
 class Solution:
     def trap(self, height: List[int]) -> int:
         
